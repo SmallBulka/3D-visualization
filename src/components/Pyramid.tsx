@@ -13,7 +13,7 @@ interface PyramidProps {
 
 export function Pyramid({ primitive, isSelected, onClick }: PyramidProps) {
   const { position, dimensions, color } = primitive;
-  const [width, height, depth] = dimensions;
+  const [width, height] = dimensions;
 
   const { geometry } = useMemo(() => {
     // Создаем геометрию пирамиды (конус с 4 гранями)
@@ -51,7 +51,7 @@ export function Pyramid({ primitive, isSelected, onClick }: PyramidProps) {
     geom.setAttribute('color', colorAttr);
 
     return { geometry: geom, colorAttribute: colorAttr };
-  }, [width, height, depth, color]);
+  }, [width, height, color]);
 
   return (
     <mesh

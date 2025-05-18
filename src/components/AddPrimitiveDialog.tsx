@@ -45,7 +45,7 @@ export function AddPrimitiveDialog({ open, onClose, onAdd }: AddPrimitiveDialogP
           Math.random() * 10 - 5,
           Math.random() * 10 - 5
         ],
-        dimensions: [params.width, params.height, params.depth],
+        dimensions: [params.width, params.height, 1],
         color: params.coloredSides 
           ? Array(6).fill(0).map(() => `#${Math.floor(Math.random()*16777215).toString(16)}`)
           : `#${Math.floor(Math.random()*16777215).toString(16)}`,

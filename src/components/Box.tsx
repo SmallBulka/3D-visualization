@@ -12,10 +12,10 @@ interface BoxProps {
 
 export function Box({ primitive, isSelected, onClick }: BoxProps) {
   const { position, dimensions, color } = primitive;
-  const [width, height, depth] = dimensions;
+  const [width, height] = dimensions;
 
   const { geometry } = useMemo(() => {
-    const geom = new THREE.BoxGeometry(width, height, depth);
+    const geom = new THREE.BoxGeometry(width, height);
     
     // массив цветов
     const colors = [];
@@ -35,7 +35,7 @@ export function Box({ primitive, isSelected, onClick }: BoxProps) {
     geom.setAttribute('color', colorAttribute);
 
     return { geometry: geom, colorAttribute };
-  }, [width, height, depth, color]);
+  }, [width, height, color]);
 
   return (
     <mesh
