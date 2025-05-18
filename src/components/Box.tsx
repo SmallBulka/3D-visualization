@@ -14,7 +14,7 @@ export function Box({ primitive, isSelected, onClick }: BoxProps) {
   const { position, dimensions, color } = primitive;
   const [width, height, depth] = dimensions;
 
-  const { geometry, colorAttribute } = useMemo(() => {
+  const { geometry } = useMemo(() => {
     const geom = new THREE.BoxGeometry(width, height, depth);
     
     // массив цветов

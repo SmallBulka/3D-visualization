@@ -15,7 +15,7 @@ export function Pyramid({ primitive, isSelected, onClick }: PyramidProps) {
   const { position, dimensions, color } = primitive;
   const [width, height, depth] = dimensions;
 
-  const { geometry, colorAttribute } = useMemo(() => {
+  const { geometry } = useMemo(() => {
     // Создаем геометрию пирамиды (конус с 4 гранями)
     const geom = new THREE.ConeGeometry(width/2, height, 4);
     
